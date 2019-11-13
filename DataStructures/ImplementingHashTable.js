@@ -25,6 +25,17 @@ class HashTable {
     return undefined
   }
 
+  keys() {
+    let keysArray = []
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keysArray.push(this.data[i][0][0])
+      }
+    }
+    return keysArray
+  }
+
   _hash(key) {
     let hash = 0;
     for (let i =0; i < key.length; i++){
