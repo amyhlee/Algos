@@ -49,6 +49,12 @@ class LinkedList {
     }
     return currentNode
   }
+  remove(index) {
+    const leader = this.traverseToIndex(index-1)
+    const nodeToRemove = leader.next
+    leader.next = nodeToRemove.next
+    this.length--
+  }
 }
 
 const myLinkedList = new LinkedList(10)
