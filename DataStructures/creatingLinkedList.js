@@ -16,6 +16,15 @@ class LinkedList {
     this.tail = newNode
     this.length++
   }
+  prepend(value) {
+    const firstNode = {
+      value: value,
+      next: null
+    }
+    firstNode.next = this.head
+    this.head = firstNode
+    this.length++
+  }
 }
 
 const myLinkedList = new LinkedList(10)
