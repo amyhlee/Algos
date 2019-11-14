@@ -34,15 +34,14 @@ class LinkedList {
   }
   insert(index, value) {
     let newNode = new Node(value)
-    const leader = this.head.traverseToIndex(index - 1)
+    const leader = this.traverseToIndex(index - 1)
     const holdingPointer = leader.next
     leader.next = newNode
     newNode.next = holdingPointer
-    this.length++
-    return this.printList()
+    length++
   }
   traverseToIndex(index) {
-    let counter = 0
+    let counter = 0;
     let currentNode = this.head
     while (counter !== index) {
       currentNode = currentNode.next
