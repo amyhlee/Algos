@@ -81,6 +81,7 @@ class LinkedList {
       prev = curr
       curr = next
     }
+    return this
   }
 }
 
