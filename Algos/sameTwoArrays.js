@@ -9,6 +9,8 @@ function same(arr1, arr2) {
   for (let i = 0; i < arr1.length; i++) {
     if (cache[arr1[i]]) {
       cache[arr1[i]]++
+    } else {
+      cache[arr1[i]] = 1
     }
   }
   for (let i = 0; i < arr2.length; i++) {
