@@ -17,13 +17,15 @@ class BinarySearchTree {
     } else {
       let currentNode = this.root
       while (true) {
-        if (value < currentNode) {
+        if (value < currentNode.value) {
+          // Left
           if (!currentNode.left) {
             currentNode.left = newNode
             return this
           }
           currentNode = currentNode.left
         } else {
+          // Right
           if (!currentNode.right) {
             currentNode.right = newNode
             return this
