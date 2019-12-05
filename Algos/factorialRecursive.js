@@ -7,3 +7,10 @@ function factorial(number) {
   }
   return product
 }
+
+function factorialRecursive(number) {
+  if (number < 2) {
+    return number
+  }
+  return number * factorialRecursive(number - 1)
+}
