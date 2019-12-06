@@ -9,3 +9,10 @@ function reverseString(str) {
   }
   return reversedString
 }
+
+function reverseStringRecursive(str) {
+  if (str === "") {
+    return ""
+  }
+  return reverseStringRecursive(str.substring(1)) + str.charAt(0)
+}
