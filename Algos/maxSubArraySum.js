@@ -1,5 +1,5 @@
 function maxSubArraySum(arr, n) {
-  let max = 0
+  let max = -Infinity
 
   if (num > arr.length) {
     return null
