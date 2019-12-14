@@ -1,6 +1,10 @@
 function maxSubArraySum(arr, n) {
   let max = 0
 
+  if (num > arr.length) {
+    return null
+  }
+
   for (let i = 0; i < arr.length - n + 1; i++) {
     let tempSum = 0
     for (let j = 1; j < numbers; j++) {
@@ -10,3 +14,4 @@ function maxSubArraySum(arr, n) {
   }
   return max
 }
+
