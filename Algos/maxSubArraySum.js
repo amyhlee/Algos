@@ -15,6 +15,25 @@ function maxSubArraySum(arr, n) {
   return max
 }
 
+function maxSubarraySum(arr, k) {
+  let max = 0
+  let tempSum = 0
+  let start = 0
+
+  if (k > arr.length) return null
+
+  for (let i = 0; i < arr.length; i++) {
+    tempSum += arr[i]
+
+    if (i >= k - 1) {
+      max = Math.max(max, tempSum)
+      tempSum -= arr[start]
+      start++
+    }
+  }
+  return max
+}
+
 function maxSubarraySum(arr, n) {
   if (num > arr.length) return null
 
