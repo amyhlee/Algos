@@ -8,14 +8,14 @@ function same(arr1, arr2) {
   for (let i = 0; i < arr1.length; i++) {
     let value = arr1[i]
 
-    if (value in cache) {
+    if (cache[value]) {
       cache[value]++
     } else {
       cache[value] = 1
     }
 
     let squared = Math.sqrt(arr2[i])
-    if (squared in cache) {
+    if (cache[squared]) {
       cache[squared]--
     } else {
       cache[squared] = -1
