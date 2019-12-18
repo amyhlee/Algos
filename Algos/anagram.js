@@ -16,10 +16,8 @@ function anagram(str1, str2) {
   for(let i = 0; i < str2.length; i++) {
     if (!cache[str2[i]]) {
       return false
-    } else if (cache[str2[i]] === 0) {
-      return false
     } else {
-      cache[str2[i]]--
+      cache[str2[i]] -= 1
     }
   }
   return true
