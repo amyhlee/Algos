@@ -22,3 +22,5 @@ function anagram(str1, str2) {
   }
   return true
 }
+
+//**  0 value in object is falsey
