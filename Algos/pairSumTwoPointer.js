@@ -8,3 +8,19 @@ function pairSum(arr, target) {
   }
 }
 
+function pairSumTwoPointer(arr, target) {
+  let start = 0
+  let end = arr.length - 1
+
+  arr = arr.sort()
+
+  while(start < end) {
+    if (arr[start] + arr[end] === target) {
+      return [arr[start], arr[end]]
+    } else if (arr[start] + arr[end] > target) {
+      end--
+    } else {
+      start++
+    }
+  }
+}
