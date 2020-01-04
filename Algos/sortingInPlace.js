@@ -12,6 +12,7 @@ function sortingInPlace(arr) {
       i++
     } else {
       [arr[i], arr[high]] = [arr[high], arr[i]]
+      high--
     }
   }
 }
