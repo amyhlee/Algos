@@ -1,21 +1,22 @@
 // Count and print the number of (contiguous) subarrays where the product of all the elements in the subarray is less than k.
 
-const numSubarrayProductLessThanK = function(nums, k) {
-  let l = 0
-  let prod = 1
-  let res = 0
-  for (r = 0; r < nums.length; r++) {
-      prod = prod * nums[r]
-      while(prod >= k && l < nums.length) {
-          prod = prod / nums[l]
-          l = l + 1
-      }
-      if (l < nums.length) {
-          res = res + r - l + 1
-      }
+function subArrayLessThanK(arr, k) {
+    let left = 0
+    let prod = 1
+    let count = 0
+    for (let i = 0; i < arr.length; i++) {
+        prod = prod * arr[i]
+        while(prod >= k && left < arr.length) {
+            prod = prod / arr[left]
+            left++
+        }
+        if (left < arr.length) {
+            count = count + i - left + 1
+        }
 
-  }
-  return res
-};
+    }
+    return count
+  };
+
 
 
