@@ -15,4 +15,5 @@ function sortingInPlace(arr) {
       high--
     }
   }
+  return arr
 }
