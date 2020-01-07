@@ -24,3 +24,21 @@ function longestUniqueSubstring(str, k) {
   }
   return maxLength
 }
+
+function longestUniqueSubstring(str) {
+  let start = 0
+  let maxLength = 0
+  let cache = {}
+
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i]
+
+    if (letter in cache) {
+      start = Math.max(start, cache[letter] + 1)
+    }
+    cache[letter] = i
+    maxLength = Math.max(maxLength, i - start + 1)
+  }
+  return maxLength
+}
+
