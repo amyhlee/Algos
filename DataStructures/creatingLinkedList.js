@@ -85,6 +85,28 @@ class LinkedList {
   }
 }
 
+class Node {
+  constructor(head, next = null) {
+    this.head = head
+    this.next = next
+  }
+}
+
+function reverse(head) {
+  if (head === null || head.next === null) {
+    return head
+  }
+  let current = head,
+    previous = null
+
+    while (current !== null) {
+      next = current.next
+      current.next = previous
+      previous = current
+      current = next
+    }
+}
+
 const myLinkedList = new LinkedList(10)
 console.log(myLinkedList(5))
 console.log(myLinkedList(16))
