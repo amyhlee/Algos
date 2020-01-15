@@ -45,3 +45,28 @@ function traverse2() {
   }
   return result
 }
+
+function minimumDepth(root) {
+  let queue = []
+
+  if (root === null) return 0
+
+  queue.push(root)
+  let minimumDepth = 0
+  while (queue.length) {
+    minimumDepth++
+    let currentLevel = []
+    let levelSize = queue.length
+
+    for (let i = 0; i < levelSize; i++) {
+      let currentNode = queue.shift()
+      currentLevel.push(currentNode.val)
+
+      if (currentNode.left === null && currentNode.right === null) {
+        return minimumDepth
+      }
+      if (currentNode.left) queue.push(currentNode.left)
+      if (currentNode.right) queue.push(currentNode.right)
+    }
+  }
+}
