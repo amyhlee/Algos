@@ -58,3 +58,39 @@ start++
 //determine maxLength
 maxLength = Math.max(maxLength, i - start + 1)
 //return maxLength
+
+
+//Given a string and a pattern, find out if the string contains any permutation of the pattern
+
+let start = 0
+let matched = 0
+let cache = {}
+
+//iterate over pattern and place into cache
+//outside of first for loop, iterate over string
+let letter = str[i]
+if (letter in cache) {
+  cache[letter]--
+  if (cache[letter] === 0) {
+    matched++
+  }
+  //check if matched equals pattern
+  if (matched === Object.keys(cache).length) {
+    return true
+  }
+  //otherwise, slide forward IF not while
+  if(j >= pattern.length - 1) {
+    let leftChar = str[start]
+    start++
+    if (leftChar in cache) {
+      if (cache[leftChar] === 0) {
+        matched--
+      }
+      //not a match, so reset count
+      cache[leftChar]++
+    }
+  }
+}
+return false
+}
+
