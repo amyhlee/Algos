@@ -1,6 +1,6 @@
 //Given a square matrix, calculate the absolute difference between the sums of its diagonals.
 
-function diagnol(arr) {
+function diagonal(arr) {
   let rightSum = 0
   let leftSum = 0
 
