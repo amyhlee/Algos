@@ -54,3 +54,16 @@ function removeDuplicates(arr) {
   }
   return nextNonDuplicate
 }
+
+//Given an unsorted array of numbers and a target ‘key’, remove all instances of ‘key’ in-place and return the new length of the array.
+
+let start = 0
+
+while (start < arr.length) {
+  if (arr[start] === target) {
+    arr.splice(start, 1)
+  }
+  return arr.length
+}
+
+//Given a sorted array, create a new array containing squares of all the number of the input array in the sorted order.
