@@ -94,3 +94,26 @@ if (letter in cache) {
 return false
 }
 
+//Write a function to return a list of starting indices of the anagrams of the pattern in the given string.
+
+//before string iteration, declare variable set to array to store indices
+let result = []
+
+for (let j = 0; j < str.length; j++) {
+  let letter = str[j]
+  if (letter in cache) {
+    cache[letter]--
+    if (cache[letter] === 0) {
+      matched++
+    }
+  }
+  //if matched, push index into result array
+  if (matched === Object.keys(cache).length) {
+    result.push(start)
+  }
+  //otherwise slide window
+}
+
+
+
+

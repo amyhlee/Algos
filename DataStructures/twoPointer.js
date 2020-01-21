@@ -11,6 +11,9 @@ if (sum > target) end--
 
 //Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the new length of the array.
 
+//Array.splice(start, deleteCount) * mutates og array
+//Array.slice(start, end) *end not included, returns shallow copy
+
 let first = 0
 let second = 1
 
@@ -35,3 +38,5 @@ for (let i = 0; i < arr.length; i++) {
   }
   return arr
 }
+
+
