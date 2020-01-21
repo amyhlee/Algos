@@ -9,7 +9,7 @@ if (sum === target) return [start, end]
 if (sum < target) start++
 if (sum > target) end--
 
-//Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the new length of the array.
+//Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the array.
 
 //Array.splice(start, deleteCount) * mutates og array
 //Array.slice(start, end) *end not included, returns shallow copy
@@ -39,4 +39,18 @@ for (let i = 0; i < arr.length; i++) {
   return arr
 }
 
+////Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the array.
 
+function removeDuplicates(arr) {
+  let nextNonDuplicate = 1
+  let i = 1
+
+  while (i < arr.length) {
+    if (arr[nextNonDuplicate - 1] !== arr[i]) {
+      arr[nextNonDuplicate] = arr[i]
+      nextNonDuplicate++
+    }
+    i++
+  }
+  return nextNonDuplicate
+}
