@@ -9,3 +9,29 @@ if (sum === target) return [start, end]
 if (sum < target) start++
 if (sum > target) end--
 
+//Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the new length of the array.
+
+let first = 0
+let second = 1
+
+while (second < arr.length) {
+  if (arr[first] === arr[second]) {
+    arr.splice(second, 1)
+  } else {
+    first++
+    second++
+  }
+  return arr
+}
+
+// alternative with for loop
+let second = 1
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] === arr[second]) {
+    arr.splice(second, 1)
+  } else {
+    second++
+  }
+  return arr
+}
