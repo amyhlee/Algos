@@ -67,3 +67,26 @@ while (start < arr.length) {
 }
 
 //Given a sorted array, create a new array containing squares of all the number of the input array in the sorted order.
+
+function squared(arr) {
+  let n = arr.length
+  let squares = Array(n).fill(0)
+  let highestIdx = arr.length - 1
+  let left = 0
+  let right = arr.length - 1
+
+  while (left <= right) {
+    let leftSquared = arr[left] * arr[left]
+    let rightSquared = arr[right] * arr[right]
+
+    if (leftSquared > rightSquared) {
+      squares[highestIdx] = leftSquared
+      left++
+    } else {
+      squares[highestIdx] = rightSquared
+      right--
+    }
+    highestIdx--
+  }
+  return squares
+}
