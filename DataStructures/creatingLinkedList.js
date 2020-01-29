@@ -86,8 +86,8 @@ class LinkedList {
 }
 
 class Node {
-  constructor(head, next = null) {
-    this.head = head
+  constructor(value, next = null) {
+    this.value = value
     this.next = next
   }
 }
