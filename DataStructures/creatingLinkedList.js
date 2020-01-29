@@ -110,3 +110,42 @@ function reverse(head) {
 const myLinkedList = new LinkedList(10)
 console.log(myLinkedList(5))
 console.log(myLinkedList(16))
+
+
+function sublist(head, p, q) {
+  if (p === q) {
+    return head
+  }
+  let current = head
+  let previous = null
+  let i = 0
+
+  while (curr !== null && i < p - 1) {
+    previous = current
+    current = current.next
+    i++
+  }
+
+  let lastNodeFirstPart = previous
+  let lastNodeSublist = current
+
+  i = 0
+
+  while (curr !== null && i < q - p + 1) {
+    next = current.next
+    current.next = previous
+    previous = current
+    current = next
+    i++
+  }
+
+  if (lastNodeFirstPart !== null) {
+    lastNodeFirstPart.next = previous
+  } else {
+    head = previous
+  }
+
+  lastNodeSublist.next = current
+  return head
+}
+
