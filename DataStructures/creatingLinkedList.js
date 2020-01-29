@@ -149,3 +149,11 @@ function sublist(head, p, q) {
   return head
 }
 
+function reversedRecursive(head) {
+  if (head === null || head.next === null) return head
+
+  const reversed = reversedRecursive(head.next)
+  head.next.next = head
+  head.next = null
+  return reversed
+}
