@@ -90,3 +90,37 @@ function squared(arr) {
   }
   return squares
 }
+
+//given an array of unsorted numbers, find a triplet in the array that whose sum is as close to the target
+
+function tripletSum(arr, target) {
+  arr = arr.sort()
+  let smallestDiff = Infinity
+  let temp
+  for (let i = 0; i < arr.length; i++) {
+    let left = i + 1
+    let right = arr.length - 1
+
+    while (left < right) {
+      let targetDiff = target - arr[i] - arr[left] - arr[right]
+
+      if (targetDiff === 0) {
+        temp = [arr[i], arr[left], arr[right]]
+        return temp
+      }
+      if (Math.abs(targetDiff) < Math.abs(smallestDiff)) {
+        temp = [arr[i], arr[left], arr[right]]
+      }
+      if (Math.abs(targetDiff) < Math.abs(smallestDiff) ||
+        Math.abs(targetDiff) === Math.abs(smallestDiff) && targetDiff > smallestDiff)
+        smallestDiff = targetDiff
+        temp = [arr[i], arr[left], arr[right]]
+    }
+    if (targetDiff > 0) {
+      left++
+    } else {
+      right--
+    }
+  }
+  return temp
+}
