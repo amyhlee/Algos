@@ -97,7 +97,7 @@ function tripletSum(arr, target) {
   arr = arr.sort()
   let smallestDiff = Infinity
   let temp
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length - 2; i++) {
     let left = i + 1
     let right = arr.length - 1
 
