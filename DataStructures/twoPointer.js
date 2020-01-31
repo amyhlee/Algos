@@ -110,6 +110,7 @@ function tripletSum(arr, target) {
       }
       if (Math.abs(targetDiff) < Math.abs(smallestDiff)) {
         temp = [arr[i], arr[left], arr[right]]
+        smallestDiff = targetDiff
       }
       if (Math.abs(targetDiff) < Math.abs(smallestDiff) ||
         Math.abs(targetDiff) === Math.abs(smallestDiff) && targetDiff > smallestDiff)
