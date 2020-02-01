@@ -125,3 +125,25 @@ function tripletSum(arr, target) {
   }
   return temp
 }
+
+//Given an array with positive numbers and a target number, find all of its contiguous subarrays whose product is less than the target number.
+
+function productlessThanK(arr, target) {
+  let prod = 1
+  let result = []
+  let left = 0
+
+  for (let i = 0; i < arr.length; i++) {
+    prod *= arr[i]
+    while (prod >= target && left < arr.length) {
+      prod /= arr[left]
+      left++
+    }
+    let tempList = []
+    for (let j = i; j > left - 1; j--) {
+      tempList.unshift(arr[j])
+      result.push(tempList)
+    }
+  }
+  return result
+}
