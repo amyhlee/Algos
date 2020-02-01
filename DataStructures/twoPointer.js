@@ -139,10 +139,10 @@ function productlessThanK(arr, target) {
       prod /= arr[left]
       left++
     }
-    let tempList = []
+    let tempList = new Deque
     for (let j = i; j > left - 1; j--) {
       tempList.unshift(arr[j])
-      result.push(tempList)
+      result.push(tempList.toArray())
     }
   }
   return result
