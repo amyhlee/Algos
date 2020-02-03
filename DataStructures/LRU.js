@@ -55,6 +55,26 @@ class Cache {
     }
     this.setHead(node)
   }
+  remove(key) {
+    //check if key exists
+    if (this.map[key]) {
+      const node = this.map[key]
 
+      //update head and tail accordingly
+      if (node.prev !== null) {
+        node.prev.next = node.next
+      } else {
+        this.head = node.next
+      }
+      if (node.next !== null) {
+        node.next.prev = node.prev
+      } else {
+        this.tail = node.prev
+      }
+      //removal
+      delete this.map[key]
+      this.size--
+    }
+  }
 
 }
