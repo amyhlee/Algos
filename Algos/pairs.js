@@ -19,3 +19,24 @@ function pairs(arr, k) {
   }
   return count
 }
+
+//pairSum for array with multiple negative numbers
+
+function pairsNegative(arr, target) {
+  let first = 0
+  let second = 1
+  arr = arr.sort()
+  
+  while (second < arr.length) {
+    let sum = arr[first] + arr[second]
+    
+    if (sum === target) {
+      return [first, second]
+    } else if (sum < target) {
+      second++
+    } else {
+      first++
+    }
+  }
+  
+}

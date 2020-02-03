@@ -43,3 +43,12 @@ function anagramSliding(str, pattern) {
   }
   return results
 }
+
+
+
+
+
+
+
+
+
