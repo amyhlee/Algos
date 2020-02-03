@@ -76,5 +76,14 @@ class Cache {
       this.size--
     }
   }
+  clear(limit = 10) {
+    if (typeof limit === 'number') this.limit = limit
+
+    this.size = 0
+    this.map = {}
+    this.head = null
+    this.tail = null
+  }
+
 
 }
