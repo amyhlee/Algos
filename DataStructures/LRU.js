@@ -31,7 +31,15 @@ class Cache {
     this.map[node.key] = node
     this.size++
   }
-
+  get(key) {
+    if (this.map[key]) {
+      const value = this.map[key].value
+      const node = new Node(key, value)
+      this.remove(key)
+      this.setHead(node)
+      return value
+    }
+  }
 
 
 
