@@ -16,5 +16,23 @@ class Cache {
     this.head = null
     this.tail = null
   }
+  setHead(node) {
+    node.next = this.head
+    node.prev = null
+    //if head exists
+    if (this.head !== null) {
+      this.head.prev = node
+      this.head = node
+    }
+    //if tail does not exist
+    if (this.tail === null) {
+      this.tail = node
+    }
+    this.map[node.key] = node
+    this.size++
+  }
+
+
+
 
 }
