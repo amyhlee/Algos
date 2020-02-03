@@ -40,7 +40,21 @@ class Cache {
       return value
     }
   }
+  set(key, value) {
+    const node = new Node(key, value)
 
+    if (this.map[key]) {
+      this.remove(key)
+    } else {
+      if (this.size >= this.limit) {
+        delete this.map[this.tail]
+        this.size--
+        this.tail = this.tail.prev
+        this.tail.next = null
+      }
+    }
+    this.setHead(node)
+  }
 
 
 }
