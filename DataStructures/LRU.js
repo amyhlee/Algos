@@ -85,5 +85,4 @@ class Cache {
     this.tail = null
   }
 
-
 }
