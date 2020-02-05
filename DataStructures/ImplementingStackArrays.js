@@ -15,10 +15,12 @@ class Stack {
     this._length++
   }
   pop() {
-    const lastVal = this._storage[this.length - 1]
-    delete this.storage[this.length - 1]
-    this._length--
-    return lastVal
+    if (this._length) {
+      const lastVal = this._storage[this.length - 1]
+      delete this.storage[this.length - 1]
+      this._length--
+      return lastVal
+    }
   }
 }
 
