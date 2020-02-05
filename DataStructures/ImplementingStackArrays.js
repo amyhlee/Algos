@@ -7,6 +7,15 @@ class Node {
 
 class Stack {
   constructor() {
+    this._storage = {}
+    this._length = 0
+  }
+
+}
+
+
+class Stack {
+  constructor() {
     this.array = []
   }
   peek() {
