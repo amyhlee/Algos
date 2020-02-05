@@ -5,10 +5,18 @@ class Queue {
     this._headIndex = 0
   }
   enqueue(value) {
-    this._storage[this._length] = value
+    this._storage[this._length + this._headIndex] = value
     this._length++
   }
   dequeue() {
+    if (this._length) {
+      const firstVal = this._storage[this._headIndex]
+      delete this._storage[this._headIndex]
+      this._length--
+      this._headIndex++
+    }
+  }
+  peek() {
 
   }
 }
