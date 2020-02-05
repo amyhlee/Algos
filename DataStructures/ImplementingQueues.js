@@ -1,3 +1,21 @@
+class Queue {
+  constructor() {
+    this._storage = {}
+    this._length = 0
+    this._headIndex = 0
+  }
+  enqueue(value) {
+    this._storage[this._length] = value
+    this._length++
+  }
+  dequeue() {
+
+  }
+}
+
+
+
+
 class Node {
   constructor(value) {
     this.value = value
