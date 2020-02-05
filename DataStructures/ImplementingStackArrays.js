@@ -14,6 +14,12 @@ class Stack {
     this._storage[this.length] = value
     this._length++
   }
+  pop() {
+    const lastVal = this._storage[this.length - 1]
+    delete this.storage[this.length - 1]
+    this._length--
+    return lastVal
+  }
 }
 
 
