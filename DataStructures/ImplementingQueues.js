@@ -5,7 +5,8 @@ class Queue {
     this._headIndex = 0
   }
   enqueue(value) {
-    this._storage[this._length + this._headIndex] = value
+    const lastIndex = this._length + this._headIndex
+    this._storage[lastIndex] = value
     this._length++
   }
   dequeue() {
@@ -17,7 +18,9 @@ class Queue {
     }
   }
   peek() {
-
+    if (this._length) {
+      return this._storage[this._headIndex]
+    }
   }
 }
 
