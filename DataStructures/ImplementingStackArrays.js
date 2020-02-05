@@ -10,7 +10,10 @@ class Stack {
     this._storage = {}
     this._length = 0
   }
-
+  push(value) {
+    this._storage[this.length] = value
+    this._length++
+  }
 }
 
 
