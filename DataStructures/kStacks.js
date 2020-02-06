@@ -9,5 +9,7 @@ class KStacks {
     this._storage = []
     this._lengths = new Array(size).fill(0)
   }
-
+  _getLength(stackId) {
+     return this._lengths[stackId - 1]
+  }
 }
