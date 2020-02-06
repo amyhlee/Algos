@@ -12,4 +12,9 @@ class KStacks {
   _getLength(stackId) {
      return this._lengths[stackId - 1]
   }
+  push(stackId, value) {
+    let idx = this._getLengths[stackId] * 3 + stackId - 1
+    this._storage[idx] = value
+    ++this._lengths[stackId - 1]
+  }
 }
