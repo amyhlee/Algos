@@ -5,17 +5,12 @@
 function maxNumBalloons(text) {
   let m = { b:0, a:0, l:0, o:0, n:0}
 
-  for (let char in text) {
-    if (m[text] !== 0) m[text]++
+  for (let i = 0; i < text.length; i++) {
+    let char = text[i]
+    if (char in m) m[char]++
   }
 
-  let words = 0
-
-  while(true) {
-    for (let char in 'balloon') {
-      if (m[char] === 0) return words
-      m[char]--
-    }
-    words++
-  }
+  let one_min = Math.min(m.b, m.a, m.l, m.om m.n)
+  let two_min = Math.floor(Math.min(m.l/2, m.o/2))
+  return Math.max(one_min, two_min)
 }
