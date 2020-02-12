@@ -11,8 +11,8 @@ function kZeroes(arr, k) {
     if (arr[right] == 0) counter--
 
     if (counter > 0) {
+      if (arr[left] == 0) counter++
       left++
-      counter++
     }
   }
   return right - left
