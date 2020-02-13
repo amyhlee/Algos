@@ -1,3 +1,20 @@
+//Given a binary array, find the maximum number of consecutive 1s in this array.
+
+function ones(arr) {
+  let maxLength = 0
+  let left = 0
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      left = i
+    }
+    maxLength = Math.max(maxLength, i - left)
+  }
+  return maxLength
+}
+
+
+
 // Given a binary array, find the maximum number of consecutive 1s in this array if you can flip at most one 0.
 
 function flip(arr) {
@@ -15,10 +32,6 @@ function flip(arr) {
   }
   return maxLength
 }
-
-
-
-
 
 
 
