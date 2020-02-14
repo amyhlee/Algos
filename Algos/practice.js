@@ -49,51 +49,7 @@ function unique(arr) {
 //HOF to iterate over the array
 
 function cleanSet(arr) {
-  let finalArr = []
-    if (arr.length < 2) {
-      return arr
-    }
-
-    let start = 0
-    let res;
-
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[start].length === arr[i].length) {
-        res = helper(arr[start], arr[i])
-        start++
-      }
-    }
-    finalArr.push(res)
-    return finalArr
-}
-
-function helper(str1, str2) {
-  let cache = {}
-  let result = ''
-
-  for (let char of str1) {
-    if (!(char in cache)) {
-      cache[char] = 1
-    } else {
-      cache[char]++
-    }
-  }
-  for (let char of str2) {
-    if (cache[char]) {
-      cache[char]--
-      if (cache[char] === 0) {
-        delete cache[char]
-      }
-    }
-    if (cache[char] === -1) {
-      result += str2
-    }
-    if (Object.values(cache) === 0) {
-      result += str1
-      result += str2
-    }
-  }
-  return result
+  return Array.from(new Set(arr))
 }
 
 // alert( aclean(arr) ); // "nap,teachers,ear" or "PAN,cheaters,era"
