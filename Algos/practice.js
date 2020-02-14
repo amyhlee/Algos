@@ -1,26 +1,3 @@
-function unique(str) {
-  let result = {}
-
-  for (let i  = 0; i < str.length; i++) {
-    let char = str[i]
-    if (!(char in result)) {
-      result[char] = 1
-    } else {
-      result[char]++
-    }
-  }
-  return Object.keys(result)
-}
-
-function unique(str) {
-  str = str.split('')
-
-  let uniqueChars = new Set (str)
-
-  return uniqueChars.entries()
-}
-
-
 let values = ["Hare", "Krishna", "Hare", "Krishna",
   "Krishna", "Krishna", "Hare", "Hare", ":-O"
 ];
@@ -32,9 +9,7 @@ function unique(arr) {
   for (let value of one.values()) {
     results.push(value)
   }
-
   return results
-
 }
 
 // alert( unique(values) ); // Hare, Krishna, :-O
