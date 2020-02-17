@@ -29,7 +29,7 @@ function nextGreatest(arr, key) {
 // Write a function to return the range of the ‘key’. If the ‘key’ is not present return [-1, -1].
 
 
-function range(arr, key) {
+function findRange(arr, key) {
   let result = [-1, -1]
   result[0] = binarySearch(arr, key, false)
   if (result[0] !== -1) {
