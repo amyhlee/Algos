@@ -28,6 +28,10 @@ function nextGreatest(arr, key) {
 
 // Write a function to return the range of the ‘key’. If the ‘key’ is not present return [-1, -1].
 
+//two pointer
+//while loop
+//find mid
+//move mid accordingly
 
 function findRange(arr, key) {
   let result = [-1, -1]
