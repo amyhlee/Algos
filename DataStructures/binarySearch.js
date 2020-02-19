@@ -28,7 +28,10 @@ function nextGreatest(arr, key) {
 
 // Write a function to return the range of the ‘key’. If the ‘key’ is not present return [-1, -1].
 
-//two pointer
+//best used for array, LL, matrix
+//need to look for specific element
+
+//two pointer, from opp ends
 //while loop
 //find mid
 //move mid accordingly
