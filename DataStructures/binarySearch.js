@@ -67,3 +67,29 @@ function binarySearch(arr, key, findMaxIndex) {
   }
   return keyIndex
 }
+
+function searchRotatedArray(arr, key) {
+  return binarySearch(arr, 0, arr.length - 1, key)
+}
+
+function binarySearch(arr, start, end, key) {
+  if (start > end) return -1
+
+  let mid = Math.floor(start + (end - start) / 2)
+
+  if (arr[mid] === key) return mid
+
+  if (arr[start] <= arr[mid] && key >= arr[start] && key <= arr[mid]) {
+    return binarySearch(arr, start, mid - 1, key)
+  }
+  else if (arr[end] >= arr[mid] && key >= arr[mid] && key <= arr[end]) {
+    return binarySearch(arr, end, mid + 1, key)
+  }
+  else if (arr[end] <= arr[mid]) {
+    return binarySearch(arr, end, mid + 1, key)
+  }
+  else if (arr[start] >= arr[mid]) {
+    return binarySearch(arr, start, mid - 1, key)
+  }
+  return -1
+}
