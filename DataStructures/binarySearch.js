@@ -87,6 +87,25 @@ function findLow(arr, key) {
   return -1
 }
 
+// find highest key in array with duplicates
+
+function findHigh(arr, key) {
+  let start = 0
+  let end = arr.length - 1
+
+  while (start <= end) {
+    let mid = Math.floor(start + (end-start) / 2)
+
+    if (arr[mid] <= key) {
+      start = mid + 1
+    } else {
+      end = mid - 1
+    }
+  }
+  if (high < arr.length && arr[high] === key) return high
+  return -1
+}
+
 
 function searchRotatedArray(arr, key) {
   return binarySearch(arr, 0, arr.length - 1, key)
