@@ -29,7 +29,7 @@ function reverse(str) {
   for (let i = 0; i < str.length; i++) {
     if (str[i+1] === '*') {
       result += str[i].repeat(parseInt(str[i+2]))
-    } else {
+    } else if (str[i] !== '*' && str[i - 1] !== '*'){
       result += str[i]
     }
   }
