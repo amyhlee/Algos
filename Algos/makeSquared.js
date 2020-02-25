@@ -18,7 +18,7 @@ function makeSquared(arr) {
       squaredArr[highestIndex] = rightSquared
       right -= 1
     }
-    highestIndex += 1
+    highestIndex -= 1
   }
   return squaredArr
 }
