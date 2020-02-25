@@ -13,7 +13,7 @@ function valid(str) {
     else if (c === '[') stack.push(']')
     else if (stack.length === 0 || c !== stack.pop()) return false
   }
-  if (str.length === 0) return true
+  if (stack.length === 0) return true
   return false
 }
 
