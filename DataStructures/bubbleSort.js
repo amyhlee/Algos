@@ -11,3 +11,22 @@ function bubbleSort(arr) {
     }
   }
 }
+
+
+function bubbleSort(arr) {
+  let done = false
+
+  while(!done) {
+    done = true
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i - 1] < arr[i]) {
+        done = false
+        let tmp = arr[i - 1]
+        arr[i - 1] = arr[i]
+        arr[i] = temp
+      }
+    }
+  }
+  return arr
+}
+
