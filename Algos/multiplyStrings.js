@@ -9,6 +9,7 @@ function truncate(str) {
     if (str[i] === str[i+1]) {
       counter++
     } else if (str[i] !== str[i+1]) {
+  //  else if (counter === 0) {    // alternative
       result += str[i]
     } else {
       counter++
