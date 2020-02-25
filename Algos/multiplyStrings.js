@@ -18,3 +18,21 @@ function truncate(str) {
   }
   return str
 }
+
+
+//Given the reverse of the above, return the resulting string
+//'A*3B*4C*47*6' -> 'AAABBBBABCCCC777777'
+
+function reverse(str) {
+  let result = ''
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i+1] === '*') {
+      result += str[i].repeat(parseInt(str[i+2]))
+    } else {
+      result += str[i]
+    }
+  }
+  return result
+}
+
