@@ -76,4 +76,43 @@ function reverseByK(head, k) {
   return head
 }
 
+// Given the head of a LinkedList and a number ‘k’, reverse every alternating ‘k’ sized sub-list starting from the head.
 
+function reverseEveryK(head, k) {
+  if (k <= 1 || head === null) return head
+
+  let curr = head
+  let prev = null
+
+  while (true) {
+    let lastNodeFirstPart = prev
+    let lastNodeSublist = curr
+    let i = 0
+    let next = null
+
+    while (curr !== null && i < k) {
+      next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+      i++
+    }
+
+    if (lastNodeFirstPart !== null) {
+      lastNodeFirstPart.next = prev
+    } else {
+      head = prev
+    }
+    lastNodeSublist.next = curr
+
+    i = 0
+    while (curr !== null && i < k) {
+      prev = curr
+      curr = curr.next
+      i++
+    }
+
+    if (curr === null) break
+  }
+  return head
+}
