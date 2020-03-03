@@ -5,6 +5,8 @@ class Node {
   }
 }
 
+// reverse sublist (p, q) within LL
+
 function reverseSublist(head, p, q) {
   let curr = head
   let prev = null
@@ -36,6 +38,8 @@ function reverseSublist(head, p, q) {
   lastNodeSublist.next = curr
   return head
 }
+
+// reverse LL every k number of elements
 
 function reverseByK(head, k) {
   if (k <= 1 || head === null) return head
@@ -71,3 +75,5 @@ function reverseByK(head, k) {
   }
   return head
 }
+
+
