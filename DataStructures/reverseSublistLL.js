@@ -20,6 +20,7 @@ function reverseSublist(head, p, q) {
 
   let lastNodeFirstPart = prev
   let lastNodeSublist = curr
+  let next = null // used to temp store next node
   i = 0
 
   while (curr !== null && i < q - p + 1) {
