@@ -53,6 +53,7 @@ function reverseByK(head, k) {
     let lastNodeFirstPart = prev
     let lastNodeSublist = curr
     let i = 0
+    let next = null // temp store next node
 
     while (curr !== null && i < k) {
       next = curr.next
