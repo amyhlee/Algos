@@ -17,4 +17,28 @@ function oddEvenPartition(head) {
 }
 
 
+//alternate solution: group all even nodes followed by odd nodes
 
+function partition(head) {
+  let curr = head
+  let i = 0
+  let oddDummy = new Node()
+  let oddTail = oldDummy
+  let evenDummy = new Node()
+  let evenTail = evenDummy
+
+  while (curr !== null) {
+    if (i % 2) {
+      evenTail.next = curr
+      evenTail = curr
+    } else {
+      oddTail.next = curr
+      oddTail = curr
+    }
+    curr = curr.next
+    i += 1
+  }
+  evenTail.next = oddDummy.next
+  oddTail.next = null
+  return evenDummy.next
+}
