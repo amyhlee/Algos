@@ -51,3 +51,31 @@ function findSumRecursive(currentNode, sum) {
   return findSumRecursive(currentNode.left, sum) +
     findSumRecursive(currentNode.right, sum)
 }
+
+
+
+
+// given a binary tree and number sequence, find if it exists from root to leaf
+
+function findMatch(root, sequence) {
+  if (root === null) return sequence.length === 0
+
+  return findMatchRecursive(root, sequence, 0)
+}
+
+function findMatchRecursive(current, sequence, sequenceIndex) {
+  if (current === null) return false
+
+  const seqLen = sequence.length - 1
+
+  if (sequenceIndex >= seqLen || current.val !== sequence[sequenceIndex]) {
+    return false
+  }
+
+  if (current.left === null && current.right === null && sequenceIndex === seqLen - 1) {
+    return true
+  }
+
+  return findMatchRecursive(current.left, sequence, sequenceIndex + 1) ||
+    findMatchRecursive(current.right, sequence, sequenceIndex + 1)
+}
