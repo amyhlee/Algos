@@ -55,3 +55,20 @@ class BinarySearchTree {
 
   }
 }
+
+
+// find largest in BST
+
+function findLargest(root) {
+  let current = root
+
+  while(current) {
+    if (!current.right) {
+      return current.value
+    }
+    current = current.right
+  }
+}
+
+// find second largest in BST
+// consider two cases: if largest has no children and when largest has children
