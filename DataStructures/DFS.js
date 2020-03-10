@@ -32,3 +32,22 @@ function findPathRecursive(currentNode, sum, currentPath, allPaths) {
   }
   currentPath.pop()
 }
+
+// find the sum of all the paths from root to leaf
+
+function findAllSums(root) {
+  return findSumRecursive(root, 0)
+}
+
+function findSumRecursive(currentNode, sum) {
+  if (currentNode === null) return 0
+
+  sum += currentNode.val
+
+  if (currentNode.left === null && currentNode.right === null) {
+    return sum
+  }
+
+  return findSumRecursive(currentNode.left, sum) +
+    findSumRecursive(currentNode.right, sum)
+}
