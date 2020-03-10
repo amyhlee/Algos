@@ -79,3 +79,28 @@ function findMatchRecursive(current, sequence, sequenceIndex) {
   return findMatchRecursive(current.left, sequence, sequenceIndex + 1) ||
     findMatchRecursive(current.right, sequence, sequenceIndex + 1)
 }
+
+// given a binary tree and sum, find the count of all paths that equal sum
+
+function findAllPaths(root, sum) {
+  return findAllPathsRecursive(root, sum, [])
+}
+
+function findAllPathsRecursive(current, sum, currentPath) {
+  if (current === null) return 0
+
+  currentPath.push(current.val)
+  let pathSum = 0
+  let count = 0
+
+  for (let i = currentPath.length - 1; i >= 0; i--) {
+    pathSum += currentPath[i]
+
+    if (pathSum === sum) count += 1
+  }
+  count += findAllPathsRecursive(current.left, sum, currentPath)
+  count += findAllPathsRecursive(current.right, sum, currentPath)
+
+  currentPath.pop()
+  return count
+}
