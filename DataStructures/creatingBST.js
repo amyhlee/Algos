@@ -72,3 +72,26 @@ function findLargest(root) {
 
 // find second largest in BST
 // consider two cases: if largest has no children and when largest has children
+
+function findSecondLargest(root) {
+  let current = root
+
+  if (!root || !root.left && !root.right) {
+    throw Error ('tree must have at least 2 nodes')
+  }
+
+  while (current) {
+    //1st case: current is largest and has subtree, second largest within subtree
+
+    if (current.left && !current.right) {
+      return findLargest(current.left)
+    }
+
+    //2nd case: if current is parent of largest and largest has no children
+    //current is 2nd largest
+    if (current.right && !current.right.left && !current.right.right) {
+      return current.value
+    }
+    current = current.value
+  }
+}
