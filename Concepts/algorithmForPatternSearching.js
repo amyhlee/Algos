@@ -6,12 +6,14 @@
 function naiveSearch(string, pattern) {
   let M = string.length
   let N = pattern.length
-  for (let i = 0; i < string.length; i++) {
+  for (let i = 0; i < M-N; i++) {
     if (string[i] == pattern[0]) {
-      for (let j = 0; j < pattern.length; j++) {
-        let counter = 1
+      let counter = 1
+        for (let j = 1; j < pattern.length; j++) {
           if (string[i + j] == pattern[j]) {
             counter += 1
+          }else{
+            break
           }
         }
       if (counter === N) return i
@@ -19,3 +21,4 @@ function naiveSearch(string, pattern) {
   }
   return -1
 }
+
