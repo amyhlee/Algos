@@ -15,6 +15,7 @@ function longestRepeating(str) {
 }
 
 // find the longest repeating substring that allows for k substitutions
+// 'abccbbbbert' --> 7
 
 function substitutingK(str, k) {
   let hash = {}
