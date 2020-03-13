@@ -34,7 +34,7 @@ function strongPassword(n, password) {
   if (!number) count += 1
   if (!lower) count += 1
   if (!upper) count += 1
-  if (special) count += 1
+  if (!special) count += 1
   if (n - count < 6) count += 6 - (n + count)
 
   return count
