@@ -1,3 +1,8 @@
+// Given a string of "L" & "R", return the number of alternating, balanced strings that can be returned
+
+// 'LRLRLLLRRR' --> 3
+// 'LLLLRRRR' --> 4
+
 function balancedStringSplit(str) {
   let balance = 0
   let numOfStrings = 0
