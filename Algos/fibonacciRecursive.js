@@ -14,3 +14,14 @@ function fibonacciIterative(n) {
   }
   return arr[n]
 }
+
+// memoization
+
+function fibonacciMemoization(n, memo) {
+  memo = memo || {}
+
+  if (memo[num]) return memo[num]
+  if (n <= 1) return 1
+
+  return memo[num] = fibonacciRecursive(n - 1, memo) + fibonacciRecursive(n - 2, memo)
+}
