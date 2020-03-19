@@ -12,3 +12,5 @@ function search(haystack, needle) {
   }
   return -1
 }
+
+
