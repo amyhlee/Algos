@@ -4,13 +4,14 @@ function generate(num) {
   return (n % 2 === 0) ? 'a'.repeat(n - 1) + 'b' : 'b'.repeat(n)
 }
 
+
+
 // Given a string S that only contains "I" (increase) or "D" (decrease), let N = S.length.
 
 // Return any permutation A of [0, 1, ..., N] such that for all i = 0, ..., N-1:
 
 // If S[i] == "I", then A[i] < A[i+1]
 // If S[i] == "D", then A[i] > A[i+1]
-
 
 function increaseDecrease(str) {
   let start = 0
@@ -32,4 +33,25 @@ function increaseDecrease(str) {
     result.push(n)
   }
   return result
+}
+
+
+// reverse a string in place
+// 'Let's go play outside' --> 's'teL og yalp edistuo'
+
+function reverseString(str) {
+  str = str.split(' ')
+
+  function reverse(word) {
+    let result = ''
+    for (let i = word.length - 1; i >= 0; i--) {
+      result += word[i]
+    }
+    return result
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    str[i] = reverse(str[i])
+  }
+  return str.join(' ')
 }
