@@ -15,7 +15,6 @@ function fibonacciIterative(n) {
   return arr[n]
 }
 
-// memoization
 
 function fibonacciMemoization(n, memo) {
   memo = memo || {}
