@@ -102,3 +102,24 @@ function gcd(str1, str2) {
     return gcd(str2.slice(str1.length), str1)
   }
 }
+
+//Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+
+function firstUnique(str) {
+  let cache = {}
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]
+    if (!(char in cache)) {
+      cache[char] = 1
+    }else{
+      cache[char]++
+    }
+  }
+  for (let j = 0; j < str.length; j++) {
+    let letter = str[j]
+    if (cache[letter] == 1) {
+      return i
+    }
+  }
+  return -1
+}
