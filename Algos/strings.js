@@ -132,3 +132,20 @@ function firstUnique(str) {
   }
   return -1
 }
+
+//longest common prefix
+//Write a function to find the longest common prefix string amongst an array of strings.
+
+function longestPre(str) {
+  if (str == null || str.length == 0) return ''
+  let pre = str[0]
+  let i = 1
+
+  while(i < str.length) {
+    while(str[i].indexOf(pre) != 0) {
+      pre = pre.substring(0, pre.length - 1)
+    }
+    i += 1
+  }
+  return pre
+}
