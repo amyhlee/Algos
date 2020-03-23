@@ -21,3 +21,17 @@ function rotation(arr, n) {
   }
   return arr
 }
+
+//rotating in place O(1) space
+
+function rotate(arr, n) {
+  const len = arr.length
+  n = n % len
+  if (n < 0) {
+    n = n + len
+  }
+
+  let temp = arr.splice(len - n)
+  arr.unshift(...temp)
+  return arr
+}
