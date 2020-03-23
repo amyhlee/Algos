@@ -27,3 +27,20 @@ var isPalindrome = function(x) {
   }
   return true;
 };
+
+
+//Given a STRING, determine if it is a valid palindrome
+
+function isPalindrome(str) {
+  str = str.replace(/[^a-z0-9]/gi, '').toLowerCase()
+  let x = 0
+  let y = str.length - 1
+
+  if (str[x] != str[y]) {
+    return false
+  }
+  x += 1
+  y -= 1
+
+  return true
+}
