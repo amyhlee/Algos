@@ -14,3 +14,23 @@ function containsDuplicate(arr) {
   }
   return false
 }
+
+// Given a non-empty array of integers, every element appears TWICE except for one. Find that single one.
+// Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+function singleNumber(arr) {
+  arr = arr.sort((a,b) => a - b)
+
+  let i = 0
+  let j = 0
+
+  while (j < arr.length) {
+    if (arr[i] === arr[j]) {
+      arr.splice(i, 2)
+    }else{
+      i += 1
+      j += 1
+    }
+  }
+  return arr
+}
