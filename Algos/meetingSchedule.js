@@ -1,3 +1,4 @@
+// find the optimized schedule given the first through last dates available
 function meeting(firstDay, lastDay) {
   let combineArr = []
   let count = 0
@@ -50,3 +51,5 @@ function meeting(firstDay, lastDay) {
     }
   return count
 }
+
+meeting([1, 2, 3, 3, 3], [4, 2, 3, 4, 5])
