@@ -36,7 +36,7 @@ function meeting(firstDay, lastDay) {
         let temp = []
         let check = start
 
-        while (check < end + 1) {
+        while (check <= end) {
           temp.push(check)
           check += 1
         }
@@ -44,9 +44,9 @@ function meeting(firstDay, lastDay) {
           if (!set.has(temp[i])) {
             set.add(temp[i])
             count += 1
+            temp = []
           }
         }
-        temp = []
       }
     }
   return count
