@@ -7,3 +7,17 @@
 //   ["nat","tan"],
 //   ["bat"]
 // ]
+
+function groupAnagram(arr) {
+  let cache = {}
+
+  for (let ele of arr) {
+    let key = [...ele].sort()
+
+    if (!cache[key]) {
+      cache[key] = []
+    }
+    cache[key].push(ele)
+  }
+  return Object.values(cache)
+}
