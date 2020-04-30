@@ -17,3 +17,14 @@ function quadratic(arr) {
   }
   return maxSum
 }
+
+function linear(arr) {
+  let maxSum = arr[0]
+  let maxEnding = arr[0]
+
+  for (let i = 1; i < arr.length; i++) {
+    maxEnding = Math.max(maxEnding + arr[i], arr[i])
+    maxSum = Math.max(maxSum, maxEnding)
+  }
+  return maxSum
+}
