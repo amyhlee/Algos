@@ -22,7 +22,10 @@ function weights(str, queries) {
     }else if (count === 1) {
       weighted.push(map[str[i]])
     }else{
-      weighted.push(map[str[i]] * count)
+      while(count > 0) {
+        weighted.push(map[str[i]] * count)
+        count--
+      }
       count = 1
     }
   }
