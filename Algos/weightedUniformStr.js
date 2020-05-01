@@ -3,7 +3,9 @@
 //Example:
 ////'aaaddeff' --> [ 'Yes', 'Yes', 'No', 'No', 'No' ]
 
+
 function weights(str, queries) {
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
   let map = {}
   let value = 1
 
