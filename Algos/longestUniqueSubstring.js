@@ -42,3 +42,19 @@ function longestUniqueSubstring(str) {
   return maxLength
 }
 
+function longestUniqueSubstring(str) {
+  let max = 0
+  let map = new Map ()
+  let start = 0
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]
+
+    if (map.get(char) >= start) {
+      start = map.get(char) + 1
+    }
+    map.add(char)
+    max = Math.max(max, i- start + 1)
+  }
+  return max
+}
