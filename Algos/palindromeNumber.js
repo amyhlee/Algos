@@ -32,7 +32,10 @@ var isPalindrome = function(x) {
 //Given a STRING, determine if it is a valid palindrome
 
 function isPalindrome(str) {
+
+  //str = str.toString().replace(/[^a-z0-9]/gi, '').toLowerCase()
   str = str.replace(/[^a-z0-9]/gi, '').toLowerCase()
+
   let x = 0
   let y = str.length - 1
 
