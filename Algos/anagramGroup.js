@@ -21,3 +21,18 @@ function groupAnagram(arr) {
   }
   return Object.values(cache)
 }
+
+function groupAnagrams(arr) {
+  let cache = {}
+
+  for (let word of arr) {
+    let key = [...word].sort()
+
+    if (cache[key]) {
+      cache[key].push(word)
+    }else{
+      cache[key] = [word]
+    }
+  }
+  return Object.values(cache)
+}
