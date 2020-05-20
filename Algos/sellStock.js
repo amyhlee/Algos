@@ -16,3 +16,16 @@ function maxProfit(prices) {
   }
   return maxProfit
 }
+
+function maxProfit(prices) {
+  let profit = 0
+  let min = prices[0]
+
+  for (let i = 1; i < prices.length; i++) {
+    let num = prices[i]
+
+    min = Math.min(min, num)
+    profit = Math.max(profit, num - min)
+  }
+  return profit
+}
