@@ -10,8 +10,8 @@ function isHappy(n) {
     let sum = 0
     let current = n
     while(current != 0) {
-      let num = current % 10
-      sum += num * num
+      const num = current % 10
+      sum += (num * num)
       current = Math.floor(current / 10)
     }
     if (set.has(sum)) {
