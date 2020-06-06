@@ -59,3 +59,36 @@ function generate(num) {
   build(num, num, partial)
   return results
 }
+
+//Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this string is valid. We define the validity of a string by these rules:
+
+// Any left parenthesis '(' must have a corresponding right parenthesis ')'.
+// Any right parenthesis ')' must have a corresponding left parenthesis '('.
+// Left parenthesis '(' must go before the corresponding right parenthesis ')'.
+// '*' could be treated as a single right parenthesis ')' or a single left parenthesis '(' or an empty string.
+// An empty string is also valid.
+
+function valid(s) {
+  let low = 0
+  let high = 0
+
+  for (let i = 0; i < s.length; i++) {
+    let c = s[i]
+    if (c === '(') {
+      low++
+      high++
+    }else if (c === ')') {
+      if (low > 0) {
+        low--
+      }
+      high--
+    }else{
+      if (low > 0) {
+        low--
+      }
+      high++
+    }
+    if (high < 0) return false
+  }
+  return low == 0
+}
