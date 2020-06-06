@@ -28,3 +28,16 @@ function freqAlphabets(s) {
   }
   return result
 }
+
+function freqAlphabets(s) {
+  let result = ''
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i+2] === '#') {
+      result += map[s[i-2] + s[i-1]]
+    }else{
+      result += map[s[i]]
+    }
+  }
+  return result
+}
