@@ -13,4 +13,3 @@ function missingNums(arr) {
   return result
 }
 
-disa([1, 3, 4, 6])
