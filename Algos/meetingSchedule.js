@@ -53,3 +53,19 @@ function meeting(firstDay, lastDay) {
 }
 
 meeting([1, 2, 3, 3, 3], [4, 2, 3, 4, 5])
+
+//The ith student started doing their homework at the time startTime[i] and finished it at time endTime[i].
+
+function homework(startTime, endTime, queryTime) {
+  let count = 0
+
+  for (let i = 0; i < startTime.length; i++) {
+    let x = startTime[i]
+    let y = endTime[i]
+
+    if (queryTime >= x && queryTime <= y) {
+      count++
+    }
+  }
+  return count
+}
