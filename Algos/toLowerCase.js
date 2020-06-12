@@ -6,7 +6,7 @@ function toLowerCase(str) {
   for (let i = 0; i < str.length; i++) {
     let num = str.charCodeAt(i)
 
-    if (num >= 65 && num <= 91) {
+    if (num >= 65 && num <= 90) {
       num += 32
     }
     result += String.fromCharCode(num)
